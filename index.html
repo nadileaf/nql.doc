@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>My Project - ReDoc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style data-styled="" data-styled-version="4.4.1"></style>
+</head>
+<body>
+    <div id="redoc-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"> </script>
+    <script>
+        var spec = {"openapi": "3.0.2", "info": {"title": "FastAPI", "version": "0.1.0"}, "paths": {"/get_keywords": {"get": {"summary": "\u83b7\u53d6\u6240\u6709\u652f\u6301\u7684\u67e5\u8be2\u5173\u952e\u5b50", "operationId": "get_keywords_get_keywords_get", "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}}}}, "/get_suggestions/{keyword}/{checkpoint_at}": {"get": {"summary": "\u6839\u636e\u5173\u952e\u5b50\u67e5\u8be2\u6240\u6709\u641c\u7d22\u63d0\u9192", "description": "\u6839\u636e\u5173\u952e\u5b50\u67e5\u8be2\u6240\u6709\u641c\u7d22\u63d0\u9192\n- param keyword:  \u6307\u5b9a\u63d0\u9192\u7684\u5173\u952e\u5b57\n- param checkpoint_at:  \u6700\u540e\u4e00\u6b21\u67e5\u8be2\u7684\u65f6\u95f4\uff0c\u683c\u5f0f\uff1a2020-01-01 00:00:00\n- param page: \u83b7\u53d6\u7aef\u81ea\u589e\uff0c\u7b2c\u4e00\u6b21\u8bf7\u6c42\u65f6\u4e3a1\uff0c\u76f4\u5230\u8bf7\u6c42\u6570\u636e\u5c0f\u4e8e\u7ed9\u5b9a\u7684 page_size \u6216\u4e3a\u7a7a\u65f6\u7ed3\u675f\u8bf7\u6c42\n- return: [[1, \"\u63d0\u91921\"], [1, \"\u63d0\u91921\"]...]", "operationId": "get_suggestions_get_suggestions__keyword___checkpoint_at__get", "parameters": [{"required": true, "schema": {"title": "Keyword", "type": "string"}, "name": "keyword", "in": "path"}, {"required": true, "schema": {"title": "Checkpoint At", "type": "string"}, "name": "checkpoint_at", "in": "path"}, {"required": true, "schema": {"title": "Page", "type": "integer"}, "name": "page", "in": "query"}, {"required": true, "schema": {"title": "Page Size", "type": "integer"}, "name": "page_size", "in": "query"}], "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}, "422": {"description": "Validation Error", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/HTTPValidationError"}}}}}}}, "/query": {"get": {"summary": "\u6267\u884c\u81ea\u7136\u8bed\u8a00SQL \u67e5\u8be2", "description": "\u6267\u884c\u81ea\u7136\u8bed\u8a00SQL \u67e5\u8be2\n- param nql:  \u7531\u81ea\u7136\u8bed\u8a00\u5904\u7406\u6a21\u5f0f\u751f\u6210\u7684SQL\n- return: {columns: ['\u52171', '\u52172'], rows: [[val1, val2], [val1, val2]]}", "operationId": "query_query_get", "parameters": [{"required": true, "schema": {"title": "Nql", "type": "string"}, "name": "nql", "in": "query"}], "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}, "422": {"description": "Validation Error", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/HTTPValidationError"}}}}}}}}, "components": {"schemas": {"HTTPValidationError": {"title": "HTTPValidationError", "type": "object", "properties": {"detail": {"title": "Detail", "type": "array", "items": {"$ref": "#/components/schemas/ValidationError"}}}}, "ValidationError": {"title": "ValidationError", "required": ["loc", "msg", "type"], "type": "object", "properties": {"loc": {"title": "Location", "type": "array", "items": {"type": "string"}}, "msg": {"title": "Message", "type": "string"}, "type": {"title": "Error Type", "type": "string"}}}}}};
+        Redoc.init(spec, {}, document.getElementById("redoc-container"));
+    </script>
+</body>
+</html>
+
